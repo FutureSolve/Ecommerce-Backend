@@ -1,0 +1,19 @@
+{
+    "prisma-smart-formatter.typescript.defaultFormatter": "esbenp.prettier-vscode",
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.words": [
+        "comapany"
+    ],
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "postgres",
+            "group": "postgres",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ]
+}
