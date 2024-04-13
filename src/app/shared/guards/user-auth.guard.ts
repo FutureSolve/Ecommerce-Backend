@@ -14,8 +14,7 @@ export class UserAuthGuard implements CanActivate {
             throw new UnauthorizedException();
         }
         const payload = await this.validateToken(token);
-        request.user = { userId: payload.userId };
-
+        request['user'] = payload;
         await this.validateTokenPayload(payload);
         return true;
     }
@@ -36,7 +35,7 @@ export class UserAuthGuard implements CanActivate {
     }
 
     private async validateTokenPayload(payload: any) {
-        if (!payload.userId || !payload.email) {
+        if (!payload.id || !payload.email) {
             Logger.error(`Invalid token payload: ${payload}`);
             throw new UnauthorizedException();
         }

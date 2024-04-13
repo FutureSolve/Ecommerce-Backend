@@ -44,7 +44,7 @@ export class AdminGuard implements CanActivate {
             Logger.error(`Invalid token payload: ${payload}`);
             throw new UnauthorizedException();
         }
-        const user = await this.userService.getUserById(payload.userId);
+        const user = await this.userService.findUser({ id: payload.userId });
         if (!user) {
             Logger.error(`Invalid userId from token payload: ${payload.userId}`);
             throw new UnauthorizedException();

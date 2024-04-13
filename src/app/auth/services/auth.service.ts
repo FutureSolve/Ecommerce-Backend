@@ -113,7 +113,7 @@ export class AuthService {
             userId: user.id,
             name: user.name,
             email: user.email,
-            phoneNumber: user.phoneNumber,
+            phone: user.phoneNumber,
             isVerified: user.isVerified,
             user_info: user.user_info,
             token: token,

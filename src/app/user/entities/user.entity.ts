@@ -44,7 +44,7 @@ export class User {
     isVerified: boolean;
     
     @DeleteDateColumn()
-    deletedAt: Date; // This column stores the soft delete timestamp
+    deletedAt: Date; 
 
     @Column({ type: 'simple-array', nullable: true, name: 'transactions_ids' })
     transactionsIds: number[];

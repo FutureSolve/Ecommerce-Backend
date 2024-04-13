@@ -14,7 +14,7 @@ export class AuthResponseDto {
     user_info: string;
 
     @ApiProperty({ example: '01281151982' })
-    phoneNumber: string;
+    phone: string;
 
     @ApiProperty({ example: '**********' })
     token: string;

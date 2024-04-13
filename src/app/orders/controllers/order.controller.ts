@@ -23,7 +23,7 @@ export class OrderController {
     @ApiOperation({ summary: 'create-order' })
     async create(@Req() req, @Body() productCreate: CreateOrderDTO) {
         const userId = req.user.userId;
-        const user = await this.userService.getUserById(userId);
+        const user = await this.userService.findUser({ id: userId });
         return await this.orderService.createOrder(user, productCreate);
     }
 
