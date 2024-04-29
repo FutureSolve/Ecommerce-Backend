@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Query, Post } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ProductService } from "../services/product.service";
 import { UpdateProductInput } from "aws-sdk/clients/servicecatalog";
@@ -41,5 +41,10 @@ export class ProductController{
     async deleteUser(@Param('id') productID: number) {
         await this.productService.markDelete(productID);
         return 'Offer Was Deleted Successfully';
+    }
+
+    @Get(':search')
+    async searchByNameOrDescription(@Query('query') query: string) {
+        return this.productService.searchByNameOrDescription(query);
     }
 }

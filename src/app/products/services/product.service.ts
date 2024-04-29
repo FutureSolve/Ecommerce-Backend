@@ -61,6 +61,13 @@ async saveProduct(productDetails:any): Promise<Product> {
     }
 }
 
+async searchByNameOrDescription(query: string): Promise<Product[]> {
+    console.log("7abola maske el bola ")
+    return this.Repository
+        .createQueryBuilder('product')
+        .where('product.name LIKE :query OR product.category LIKE :query', { query: `%${query}%` })
+        .getMany();
+}
 
 async markDelete(id: number) {
     await this.Repository.softDelete({ id:id });
